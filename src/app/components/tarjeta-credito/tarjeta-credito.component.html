@@ -14,6 +14,40 @@
             <div class="card">
                 <div class="card-body">
                     <h3 class="titulo"> Agregar Tarjeta</h3>
+                    <form >
+                        <div class="input-group mb-3 input-group-lg">
+                            <span class="input-group-text" id="basic-addon1">
+                                <i class="fa-solid fa-user"></i>
+                            </span>
+                            <input type="text" class="form-control" placeholder="titular" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3 input-group-lg">
+                            <span class="input-group-text" id="basic-addon1">
+                                <i class="fa-regular fa-credit-card"></i>
+                            </span>
+                            <input type="text" class="form-control" placeholder="titular" aria-label="Username" aria-describedby="basic-addon1">
+                          </div>
+                          
+                          <div class="row">
+                            <div class="col-lg-7">
+                                <div class="input-group input-group mb-3">
+                                    <span class="input-group-text">
+                                        <i class="fa-regular fa-calendar"></i>
+                                    </span>
+                                    <input type="text" class="form-control" placeholder="MM/YY">
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="input-group input-group mb-3">
+                                    <span class="input-group-text">
+                                        <i class="fa-solid fa-key"></i>
+                                    </span>
+                                    <input type="password" class="form-control" placeholder="MM/YY">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-success btn-lg"><i class="fa-solid fa-database "></i> &nbsp;Aceptar</button>
+                          </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -22,20 +56,25 @@
                 <div class="card-body">
                     <h3 class="titulo"> Listado de tarjetas </h3>
                     <table class="table">
-                        <tr>|
+                        <tbody>
+                        <tr *ngFor="let item of cargarListaTarjetas()">
                             <td>
-                                Juan perez
+                                {{item.nombre}}
                             </td>
                             <td>
-                                237604126344136432
+                                {{item.numeroTarjeta}}
                             </td>
                             <td>
-                                11/23
+                                {{item.fechaExpiracion}}
                             </td>
                             <td>
-
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </td>
+                            <td>
+                                <i class="fa-regular fa-trash-can"></i>
                             </td>
                         </tr>
+                    </tbody>
                     </table>
                 </div>
             </div>
