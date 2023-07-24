@@ -13,8 +13,8 @@
         <div class="col-lg-6">
             <div class="card">
                 <div class="card-body">
-                    <h3 class="titulo"> Agregar Tarjeta</h3>
-                    <form [formGroup]="form" (ngSubmit)="AgregarTarjeta()">
+                    <h3 class="titulo"> {{ accion | uppercase }} Tarjeta</h3>
+                    <form [formGroup]="form" (ngSubmit)="guardarTarjeta()">
                         <div  class="input-group mb-3 input-group-lg">
                             <span class="input-group-text" id="basic-addon1">
                                 <i class="fa-solid fa-user" 
@@ -76,10 +76,10 @@
                                 {{item.fechaExpiracion}}
                             </td>
                             <td>
-                                <i class="fa-regular fa-pen-to-square"></i>
+                                <i (click)="editarTarjeta(item)" class="fa-regular fa-pen-to-square"></i>
                             </td>
                             <td>
-                                <i class="fa-regular fa-trash-can"></i>
+                                <i (click)="eliminarTarjeta(item.id)" class="fa-regular fa-trash-can"></i>
                             </td>
                         </tr>
                     </tbody>
